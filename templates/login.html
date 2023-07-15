@@ -1,0 +1,61 @@
+
+{% extends 'base.html' %}
+{% block title %}Services{% endblock %}
+{% block body %}
+{% load static %}
+ <!-- inner banner -->
+ <div class="inner-banner">
+    <section class="w3l-breadcrumb">
+        <div class="container">
+            <h4 class="inner-text-title font-weight-bold text-white mb-sm-3 mb-2">Booking</h4>
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="/">Home</a></li>
+                <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Login</li>
+            </ul>
+        </div>
+    </section>
+</div>
+<!-- //inner banner -->
+
+<!-- Login Form -->
+<section class="w3l-contact-11 py-5" id="contact">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-8">
+                <h3 class="title-style mb-2">Login</h3>
+            </div>
+        </div>
+
+        <div class="form-41-mian mt-5 pt-lg-5 pt-md-4">
+            <div class="container">
+                <div class="form-inner-cont">
+                    <form method="post" class="signin-form" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row align-form-map">
+                            <div class="col-sm-12 form-input">
+                                <label for="w3lName">Userame</label>
+                                <input type="text" name="username" id="w3lName" placeholder="Name A B" />
+                            </div>        
+                            <div class="col-sm-12 form-input">                                
+                                <label for="w3lSender">Password</label>
+                                <input type="password" name="password" id="w3lSender" placeholder="Capital & small letters, Numbers, Characters" />
+                                <div class="submit text-right">
+                                    <button type="submit" class="btn btn-style-white btn-style-primary">Submit</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        {% for msg in messages %}
+                        <p style="color: crimson;"><b>{{msg}}</b></p>
+                        {% endfor %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- //Login Form -->
+
+{% endblock %}

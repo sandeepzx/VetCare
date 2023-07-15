@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock %}
+{% block body %}
+{% load static %}
+
+    <!-- inner banner -->
+    <div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold text-white mb-sm-3 mb-2">Booking</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Booking</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- //inner banner -->
+
+    <!-- Booking Form -->
+    <section class="w3l-contact-11 py-5" id="contact">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8">
+                    <h3 class="title-style mb-2">Doctor</h3>
+                </div>
+            </div>
+    
+            <div class="form-41-mian mt-5 pt-lg-5 pt-md-4">
+                <div class="container">
+                    <div class="form-inner-cont">
+                        <form method="post" class="signin-form" enctype="multipart/form-data">
+                            {% csrf_token %} {{doctor}}
+                            <div class="row align-form-map">
+                                <div class="col-sm-12 form-input">
+                                    <label for="w3lName">Full Name</label>
+                                    <input type="text" name="username" id="w3lName" placeholder="Name A B" />
+                                </div>
+                                <div class="col-sm-12 form-input">
+                                    <label for="phonenumber">Phone Number</label>
+                                    <input type="number" name="phonenumber" placeholder="1234567890" class="contact-input" />
+                                </div>
+                                <div class="col-sm-12 form-input">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" placeholder="example12@gmail.com" required="" />
+                                </div>
+                                <!-- <div class="col-sm-12 form-input">
+                                    <label for="filename">Certifiacte</label>
+                                    <input type="file" name="filename" id="filename" placeholder="example.pdf" />
+                                </div> -->
+                                <div class="col-sm-12 form-input">
+                                    <fieldset>
+                                        <legend><b>Working Time</b></legend>
+                                        <label for="time1">From </label>
+                                        <input type="time" id="time" name="time1" />
+                                        <label for="time2">To</label>
+                                        <input type="time" id="time" name="time2" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-sm-12 form-input">
+                                    <label for="w3lMessage">Address</label>
+                                    <textarea placeholder="" name="address" id="w3lMessage" required=""></textarea>
+                                </div>
+                                <div class="col-sm-12 form-input">
+                                    <label for="lattitude">Lattitude</label>
+                                    <input type="number" name="lattitude" step="0.000001" id="lattitude" class="contact-input">
+                                </div>
+                                <div class="col-sm-12 form-input">
+                                    <label for="longitude">Longitude</label>
+                                    <input type="number" name="longitude" step="0.000001" id="longitude" class="contact-input">
+                                </div>
+                                <div class="col-sm-12 form-input">
+                                    <label for="Qualification">Qualification</label>
+                                    <select name="qualification" class="form-control" id="Qualification">
+                                        <option value="Bachelor of Veterinary Science">Bachelor of Veterinary Science</option>
+                                        <option value="Master Programme (MVSc)">Master Programme (MVSc)</option>
+                                        <option value="Doctoral Programme (PhD)">Doctoral Programme (PhD)</option>
+                                        <option value="National Diploma">National Diploma</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-12 form-input">
+                                    <br>
+                                    <label for="days">Working Days</label>
+                                    <input type="text" name="days" id="w3lName" placeholder="Monday,Tuesday,Friday..." />
+                                </div>
+                                <div class="col-sm-6 form-input">
+                                    
+                                    <label for="w3lSender">Password</label>
+                                    <input type="password" name="password" id="w3lSender" placeholder="Capital & small letters, Numbers, Characters" />
+                                </div>
+                                <div class="col-sm-6 form-input">
+                                    
+                                    <label for="w3lSender">Confirm Password</label>
+                                    <input type="password" name="cpassword" id="w3lSender" placeholder="Capital & small letters, Numbers, Characters" />
+                                </div>
+                            </div>
+                            <div class="submit text-right">
+                                <button type="submit" class="btn btn-style-white btn-style-primary">Submit</button>
+                            </div>
+                            {% for msg in messages %}
+                            <p style="color: crimson;"><b>{{msg}}</b></p>
+                            {% endfor %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- //Booking Form -->
+
+    <!-- Tutorial Video -->
+    <section class="w3l-contact-11 py-5" id="contact">
+        <div class="container ">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8">
+                  <h6 class="title-style mb-2">To get lattitude and longitude</h6>
+                </div>
+            </div>
+            <video width="90%" controls autoplay >
+                <source src="{% static 'assets/images/location.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+    </section>
+    <!-- //Tutorial Video -->
+{% endblock %}
+    

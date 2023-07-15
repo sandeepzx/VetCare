@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}Doctor{% endblock %}
+{% block body %}
+{% load static %}
+
+
+    <!-- inner banner -->
+    <div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold text-white mb-sm-3 mb-2">Doctors</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Doctors</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- //inner banner -->
+
+    <!-- Available Doctors -->
+    <section class="w3l-contact-11 py-5" id="contact">
+        <div class="container py-md-5 py-5">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8">
+                    <div class="section-heading mb-sm-5 mb-4">
+                        <h3 class="title-style mb-2">Available</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- for loop to add doctors -->
+            <div class="d-grid contact section-gap">
+                <div class="contact-info-left d-grid text-center">
+                    {% for i in doc_list %}
+                    <div class="contact-info">
+                        <img src="{% static 'assets/images/images.png' %}" width="100px" alt="">
+                        <h4>{{i.username}}</h4>
+                        <a class="btn btn-style-white btn-style-primary" href="{% url 'vetcareapp:doc' i.username %}" >Details</a><br><br>
+                        <a class="btn btn-style-white btn-style-primary" href="{% url 'vetcareapp:consultations' i.username  %}" >Patients</a><br><br>
+                        <a class="btn btn-style-white btn-style-primary" href="{% url 'vetcareapp:message' user.username i.username  %}" >Chat</a>
+                    </div>                   
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- //for loop to add doctors -->
+            
+        </div>
+    </section>
+    <!-- //Available Doctors -->
+
+    {% endblock %}
+
+    

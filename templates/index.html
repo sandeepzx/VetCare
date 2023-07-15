@@ -1,0 +1,281 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+{% block body %}
+
+{% load static %}
+
+
+    <!-- banner section -->
+    <section class="w3l-banner pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 banner-left">
+                    <h3 class="text-white mb-3 title">Give Fastest Treatment<br>
+                        For <span class="type-js"><span class="text-js">Your Pets! </span></span></h3>
+                    <p class="lead text-white">We offer special Treatment for pets!
+                    </p>
+                    <div class="d-flex align-items-center mt-5">
+                        <a class="btn btn-style-white mr-2" href="services/">View Our Services</a>
+                        <a class="btn btn-style-white btn-style-border" href="contact/">Hire Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //banner section -->
+
+    <!-- about section -->
+    <section class="w3l-features-photo-7 py-5">
+        <div class="container py-md-5 py-4">
+            <div class="row w3l-features-photo-7_top align-items-center">
+                <div class="col-lg-6 w3l-features-photo-7_top-right mb-lg-0 mb-sm-5 mb-4">
+                    <img src="{% static 'assets/images/about.jpg' %}" class="img-responsive" alt="" />
+                </div>
+                <div class="col-lg-6 w3l-features-photo-7_top-left pl-lg-4">
+                    <h4 class="title-style mb-2">About Us</h4>
+                    <p>We help pet with diseases & provide a vaccination remainder
+                    </p>
+                    <div class="row feat_top mt-4 pt-lg-3">
+                        <div class="col-6 w3l-features-photo-7-box">
+                            <i class="fa fa-paw" aria-hidden="true"></i>
+                            <h5 class="w3l-feature-text my-2">Our Vision</h5>
+                            <p>Make a strong and healthy pets</p>
+                        </div>
+                        <div class="col-6 w3l-features-photo-7-box">
+                            <i class="fa fa-angellist" aria-hidden="true"></i>
+                            <h5 class="w3l-feature-text my-2">Our Mission</h5>
+                            <p>To provide a solution for maximizing time efficiently of users</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //about section -->
+
+    <!-- what we do section -->
+    <div class="w3l-grids-block-5 py-5">
+        <div class="container pb-md-5 py-4">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8">
+                    <div class="section-heading mb-sm-5 mb-4">
+                        <h3 class="title-style mb-2">What We Do</h3>
+                        <p class="lead">
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-card-single">
+                        <div class="grids5-info">
+                            <a href="#blog"><img src="{% static 'assets/images/img1.jpg' %}" alt="" /></a>
+                            <div class="blog-info">
+                                <h4><a href="#blog">Doctor Consultation</a></h4>
+                                <p>Consult doctor as per your priorities</p>
+                                <a class="btn btn-style" href="about/">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                    <div class="blog-card-single">
+                        <div class="grids5-info">
+                            <a href="#blog"><img src="{% static 'assets/images/route.jpg' %}" alt="" /></a>
+                            <div class="blog-info">
+                                <h4><a href="#blog">Fastest Route</a></h4>
+                                <p>Get access to the shortest route</p>
+                                <a class="btn btn-style" href="about/">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+                    <div class="blog-card-single">
+                        <div class="grids5-info">
+                            <a href="#blog"><img src="{% static 'assets/images/notification.jpg' %}" alt="" /></a>
+                            <div class="blog-info">
+                                <h4><a href="#blog">Treatment Notification</a></h4>
+                                <p>Get notified for the medicine on time</p>
+                                <a class="btn btn-style" href="about/">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //what we do section -->
+
+    
+
+    <!-- gallery section -->
+    <div class="gallery section-agile py-5">
+        <div class="container py-md-5 py-4">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8">
+                    <div class="section-heading mb-sm-5 mb-4">
+                        <h3 class="title-style mb-2">Our Gallery</h3>
+                        <p class="lead">
+                            Few of our satisfied customers happy moments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row gallery_grids">
+                <div class="col-3 agile-gallery_grid_main">
+                    <div class="gallery-img-grid gallery_grid1 hover14 column">
+                        <div class="gallery_effect">
+                            <a href="{% static 'assets/images/g11.jpg' %}" class="js-img-viwer d-block">
+                                <figure>
+                                    <img src="{% static 'assets/images/g1.jpg' %}" alt=" " class="img-fluid" />
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-img-grid hover14 column">
+                        <div class="gallery_effect">
+                            <a href="{% static 'assets/images/g88.jpg' %}" class="js-img-viwer d-block">
+                                <figure>
+                                    <img src="{% static 'assets/images/g88.jpg' %}" alt=" " class="img-fluid" />
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-img-grid hover14 column">
+                        <div class="gallery_effect">
+                            <a href="{% static 'assets/images/g66.jpg' %}" class="js-img-viwer d-block">
+                                <figure>
+                                    <img src="{% static 'assets/images/g6.jpg' %}" alt=" " class="img-fluid" />
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 agile-gallery_grid_main">
+                    <div class="row grid-2-gallery">
+                        <div class="col-6 agile-gallery_grid_main">
+                            <div class="gallery-img-grid hover14 column">
+                                <div class="gallery_effect">
+                                    <a href="{% static 'assets/images/g22.jpg' %}" class="js-img-viwer d-block">
+                                        <figure>
+                                            <img src="{% static 'assets/images/g2.jpg' %}" alt=" " class="img-fluid" />
+                                        </figure>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 agile-gallery_grid_main">
+                            <div class="gallery-img-grid hover14 column">
+                                <div class="gallery_effect">
+                                <a href="{% static 'assets/images/g33.jpg' %}" class="js-img-viwer d-block">
+                                        <figure>
+                                            <img src="{% static 'assets/images/g3.jpg' %}" alt=" " class="img-fluid" />
+                                        </figure>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-img-grid hover14 column">
+                        <div class="gallery_effect">
+                            <a href="{% static 'assets/images/g9.jpg' %}" class="js-img-viwer d-block">
+                                <figure>
+                                    <img src="{% static 'assets/images/g9.jpg' %}" alt=" " class="img-fluid" />
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 agile-gallery_grid_main">
+                    <div class="gallery-img-grid gallery_grid1 hover14 column">
+                        <div class="gallery_effect">
+                            <a href="{% static 'assets/images/g44.jpg' %}" class="js-img-viwer d-block">
+                                <figure>
+                                    <img src="{% static 'assets/images/g4.jpg' %}" alt=" " class="img-fluid" />
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-img-grid hover14 column">
+                        <div class="gallery_effect">
+                            <a href="{% static 'assets/images/g77.jpg' %}" class="js-img-viwer d-block">
+                                <figure>
+                                    <img src="{% static 'assets/images/g7.jpg' %}" alt=" " class="img-fluid" />
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-img-grid hover14 column">
+                        <div class="gallery_effect">
+                            <a href="{% static 'assets/images/g55.jpg' %}" class="js-img-viwer d-block">
+                                <figure>
+                                    <img src="{% static 'assets/images/g5.jpg' %}" alt=" " class="img-fluid" />
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //gallery section -->
+
+     <!-- content with bg -->
+     <section class="w3l-content-bg py-5">
+        <div class="container py-md-5 py-4">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="left-content-bg">
+                        <p class="text-tag">Pet Lovers</p>
+                        <h4 class="text-head-content">Our team is filled with highly dedicated pet lovers</h4>
+                        <a class="btn btn-style-white mt-4" href="#about">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //content with bg -->
+
+    <!-- block icons section -->
+    <section class="w3l-block-sec py-md-5 pt-md-0 pt-2 pb-md-0 pb-5">
+        <div class="container py-md-5 pb-md-0 pb-4">
+            <div class="row left-block-sec">
+                <div class="col-md-4 text-center">
+                    <img class="img-fluid" src="{% static 'assets/images/dog2.png' %}" alt=" ">
+                </div>
+                <div class="col-md-8 right-block-bg">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                            <h6>Fastest Treatment</h6>
+                            <p>Patients are getting medical treatments as soon as possible</p>
+                        </div>
+                        <div class="col-sm-6 mt-sm-0 mt-5">
+                            <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                            <h6>Medicine Alert</h6>
+                            <p>The patient can follow commands, and take the medicines</p>
+                        </div>
+                        <div class="col-sm-6 mt-5">
+                            <i class="fa fa-stethoscope " aria-hidden="true"></i>
+                            <h6>Best Consultation</h6>
+                            <p>A good consultant can only make a consultation better</p>
+                        </div>
+                        <div class="col-sm-6 mt-5">
+                            <i class="	fas fa-route" aria-hidden="true"></i>
+                            <h6>Fastest Route</h6>
+                            <p>Get access to the shortest route</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //block icons section -->
+    
+    {% endblock %}
+   
+
+   

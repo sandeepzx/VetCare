@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Message{% endblock %}
+{% block body %}
+
+{% load static %}
+<!-- inner banner -->
+<div class="inner-banner">
+  <section class="w3l-breadcrumb">
+      <div class="container">
+          <h4 class="inner-text-title font-weight-bold text-white mb-sm-3 mb-2">Message</h4>
+          <ul class="breadcrumbs-custom-path">
+              <li><a href="/">Home</a></li>
+              <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span> Message</li>
+          </ul>
+      </div>
+  </section>
+</div>
+
+<div class="container-float">
+  <div class="row">
+      <div class="col-md-12 pt-md-5">
+          <div class="banner">
+              <div class="banner-text text-justify">
+                  <h1 class="text-center"><strong>MESSAGES</strong></h1>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row pt-md-4">
+      <div class="col-md-4 ">
+          <form  method="post" class="p-3 shadow">
+              {% csrf_token %}
+              
+                <p>*Use only in Emergency</p>
+                <input type="text" name="message" placeholder="Type your message">
+                <input class="btn btn-success" type="submit" value="Send">
+          </form>
+      </div>
+      <div class="col-md-8 "> 
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-header text-center">Virat</h5>
+                <div class="chat-messages">
+                    {% for chat in chat %}
+                    <div class="message">
+                        <span class="sender-name">{{chat.sender}}</span>
+                        <span class="message-text">{{chat.message}}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <br>
+        
+          
+      </div>
+  </div>
+</div>
+
+
+{% endblock %}

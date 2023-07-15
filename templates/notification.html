@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Notification{% endblock %}
+{% block body %}
+
+{% load static %}
+<!-- inner banner -->
+<div class="inner-banner">
+  <section class="w3l-breadcrumb">
+      <div class="container">
+          <h4 class="inner-text-title font-weight-bold text-white mb-sm-3 mb-2">Contact Us</h4>
+          <ul class="breadcrumbs-custom-path">
+              <li><a href="/">Home</a></li>
+              <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span> Contact Us</li>
+          </ul>
+      </div>
+  </section>
+</div>
+
+<div class="container-float">
+  <div class="row">
+      <div class="col-md-12 pt-md-5">
+          <div class="banner">
+              <div class="banner-text text-justify">
+                  <h1 class="text-center"><strong>NOTIFICATIONS</strong></h1>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row pt-md-4">
+      <div class="col-md-6 ">
+          <form  method="post" class="p-3 shadow">
+              {% csrf_token %}
+              
+              <label  for="date"><b>Enter Date:</b></label>
+              <input class="form-control" type="date" id="date" name="date"> 
+              <input class="btn btn-success" type="submit" value="Add">
+          </form>
+      </div>
+      <div class="col-md-6 ">
+          
+          
+          <div class="card shadow">
+              <div class="card-body">
+                {% if user_dates %}
+                  <h3 class="card-title"><b>Date(s) that have arrived:</b></h3>
+                  {% for date in user_dates %}
+                    <p>{{ date }}</p>
+                  {% endfor %}
+                {% else %}
+                  <p>No dates have arrived yet.</p>
+                {% endif %}
+
+                <p>Current Date: {{ current_date }}</p>
+                  
+              </div>
+          </div>
+        <br>
+          
+      </div>
+  </div>
+</div>
+
+
+{% endblock %}

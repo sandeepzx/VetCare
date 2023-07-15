@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %}Book{% endblock %}
+
+{% block body %}
+{% load static %}
+
+
+    <!-- inner banner -->
+    <div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold text-white mb-sm-3 mb-2">Booking</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Booking</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- //inner banner -->
+
+    <!-- Booking Form -->
+    <section class="w3l-contact-11 py-5" id="contact">
+      <div class="container ">
+          <div class="row justify-content-center text-center">
+              <div class="col-md-8">
+                <h3 class="title-style mb-2">CONSULTATIONS</h3>
+              </div>
+          </div>
+          
+          <div class="form-41-mian mt-5 pt-lg-5 pt-md-4">
+              <div class="container">
+                  <div class="form-inner-cont">
+                      <form method="post" class="signin-form" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{petowner}}
+                            <div class="row align-form-map">
+                                <div class="col-sm-12 form-input">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="text" name="phone" id="phone" />
+                                </div>
+                                <div class="col-sm-12 form-input">
+                                    <label for="petname">Pet Name</label>
+                                    <input type="text" name="petname" id="petname" />
+                                </div>
+                                <div class="col-sm-12 form-input">
+                                    <label for="petage">Pet Age</label>
+                                    <input type="number" name="petage" id="petage" class="contact-input">
+                                </div>
+                            
+                                <div class="col-sm-12 form-input">
+                                    <label for="pet_type">Patient Details</label>
+                                    <select id="pet_type" class="form-control" name="patientdetails">
+                                        <option value="Dog">Dog</option>
+                                        <option value="cat">Cat</option>
+                                        <option value="cow">Cow</option>
+                                        <option value="goat">Goat</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-12 form-input">
+                                    <label for="lattitude">Lattitude</label>
+                                    <input type="number" name="lattitude" step="0.000001" id="lattitude" class="contact-input">
+                                </div>
+                                <div class="col-sm-12 form-input">
+                                    <label for="longitude">Longitude</label>
+                                    <input type="number" name="longitude" step="0.000001" id="longitude" class="contact-input">
+                                </div>
+                                <div class="col-sm-12 form-input">
+                                    <label for="Symptoms">Symptoms</label>
+                                    <textarea placeholder="Tell us anything else that might be important." name="pmessage" id="Symptoms"></textarea>
+                                </div>                    
+                            </div>
+                          <div class="submit text-right">
+                              <button type="submit" class="btn btn-style-white btn-style-primary">Submit</button>
+                          </div>
+                      </form>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+    </section>
+  <!-- //Booking Form -->
+
+    <!-- Tutorial Video -->
+    <section class="w3l-contact-11 py-5" id="contact">
+        <div class="container ">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8">
+                  <h6 class="title-style mb-2">To get lattitude and longitude</h6>
+                </div>
+            </div>
+            <video width="90%" controls autoplay >
+                <source src="{% static 'assets/images/location.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+    </section>
+    <!-- //Tutorial Video -->
+
+    {% endblock %}

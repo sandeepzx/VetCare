@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{% block title %}Consultations{% endblock %}
+
+{% block body %}
+{% load static %}
+
+
+    <!-- inner banner -->
+    <div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold text-white mb-sm-3 mb-2">Doctors</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Doctors</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- //inner banner -->
+
+    <!--Doctor Details -->
+    <section class="w3l-contact-11 py-5" id="contact">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-8">
+                <div class="section-heading mb-sm-5 mb-4">
+                    <h3 class="title-style mb-2">CONSULTATIONS</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+        <table id="myTable" class="table container">
+            <thead>
+                <tr>
+                    
+                    <th>Owner Name</th>
+                    <th>phone</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>pet name</th>
+                    <th>pet age</th>
+                    <th>pet type</th>
+                    <th>symptoms</th> 
+                </tr>
+            </thead>
+            <tbody>
+            
+                {% for i in pets %}
+                <tr>
+                    
+                    <td>{{i.ownername}}</td>
+                    <td>{{i.phone}}</td>
+                    <td id="lat">{{i.lat}}</td>
+                    <td id="lon">{{i.lng}}</td>
+                    <td>{{i.pet_name}}</td>
+                    <td>{{i.pet_age}}</td>
+                    <td>{{i.pet_type}}</td>
+                    <td>{{i.symptoms}}</td>
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+
+        <!-- Book doctor button -->
+        <form action="booking.html">
+            <div class="book text-right">
+                <button type="submit" class="btn btn-style-white btn-style-primary" formaction="#">Start Now</button>
+            </div>
+        </form>
+        <!-- //Book doctor button -->
+
+    </section>
+    <!-- //Doctor Details -->
+
+    <section class="w3l-contact-11 py-5" id="contact">
+        <div class="w3l-grids-block-5 py-5">
+            <div class="container pb-md-5 py-4">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-8">
+                        <div class="section-heading mb-sm-5 mb-4">
+                            <h3 class="title-style mb-2">Path</h3>
+                            <p class="lead">
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="blog-card-single">
+                            <div class="grids5-info"> 
+                                <div class="blog-info">
+                                    <h4 class="title-style"><a href="#blog">0</a></h4>
+                                    <p>Doctor's Home</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                        {% for item in route %}
+                    
+                        <div class="blog-card-single">
+                            <div class="grids5-info"> 
+                                <div class="blog-info">
+                                    <h4 class="title-style"><a href="#blog">{{item}}</a></h4>
+                                    <p>Pets Home</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                        {% endfor %}
+                    
+                        <div class="blog-card-single">
+                            <div class="grids5-info"> 
+                                <div class="blog-info">
+                                    <h4 class="title-style"><a href="#blog">0</a></h4>
+                                    <p>Doctor's Home</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container py-4">
+                    <div class="row justify-content-center text-center">
+                        <h6 class="title-style ">Distance Is {{distance}} Meter</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+
+    <!-- Map to show the route -->
+    <section >
+        <div id="map" style="height: 400px;"></div>
+    </section>
+    <!-- //Map to show the route -->
+
+    <script>
+         var points = JSON.parse('{{ points|safe }}');
+
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: {lat: 10.525161, lng:  76.213733}  // Example initial map center
+        });
+
+        var directionsService = new google.maps.DirectionsService();
+        var directionsRenderer = new google.maps.DirectionsRenderer({
+            map: map
+        });
+
+        // Create an array of LatLng objects from the points
+        var waypoints = points.map(function(point) {
+            return new google.maps.LatLng(point.lat, point.lng);
+
+            // Create a marker for each point
+            var marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                });
+
+            return position;       
+        });
+
+        // Define the route request
+        var request = {
+            origin: waypoints[0],  // Start point
+            destination: waypoints[waypoints.length - 1],  // End point
+            waypoints: waypoints.slice(1, -1),  // Intermediate points
+            travelMode: 'DRIVING'
+        };
+
+        // Calculate and display the route
+        directionsService.route(request, function(response, status) {
+            if (status == 'OK') {
+                directionsRenderer.setDirections(response);
+            }
+        });
+    }
+
+    // Load the map when the page has finished loading
+    google.maps.event.addDomListener(window, 'load', initMap);
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBvxXt4UNkdkgejdObvqyRkcF7ebV4Jcg&callback=initMap" async defer></script>
+
+{% endblock %}
+
+    

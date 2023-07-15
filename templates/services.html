@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% block title %}Services{% endblock %}
+{% block body %}
+{% load static %}
+
+
+    <!-- inner banner -->
+    <div class="inner-banner">
+        <div class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold text-white mb-sm-3 mb-2">Our Services</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Services</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- //inner banner -->
+
+    <!-- services -->
+    <section class="about-section py-5">
+        <div class="container py-lg-4 pt-3">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8">
+                    <div class="section-heading mb-sm-5 mb-4">
+                        <h3 class="title-style mb-2">Our Services</h3>
+                        <p class="lead">
+                            These are thye few services that we are providing to the users
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="about-single p-3 d-flex justify-content-between">
+                        <div class="about-icon mr-3">
+                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                        </div>
+                        <div class="about-content">
+                            <h5 class="mb-sm-3 mb-2">Fastest Treatment</h5>
+                            <p>Patients are getting medical treatments as soon as possible</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                    <div class="about-single p-3 d-flex justify-content-between">
+                        <div class="about-icon mr-3">
+                            <i class="fa fa-heartbeat" aria-hidden="true"></i>
+                        </div>
+                        <div class="about-content">
+                            <h5 class="mb-sm-3 mb-2">Medicine Alert</h5>
+                            <p>The patient can follow commands, and take the medicines on time</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+                    <div class="about-single p-3 d-flex justify-content-between">
+                        <div class="about-icon mr-3">
+                            <i class="fa fa-user-md" aria-hidden="true"></i>
+                        </div>
+                        <div class="about-content">
+                            <h5 class="mb-sm-3 mb-2">Best Consultation</h5>
+                            <p>A good consultant can only make a consultation better</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <div class="about-single p-3 d-flex justify-content-between">
+                        <div class="about-icon mr-3">
+                            <i class="fas fa-route" aria-hidden="true"></i>
+                        </div>
+                        <div class="about-content">
+                            <h5 class="mb-sm-3 mb-2">Fastest Route</h5>
+                            <p>Get access to the shortest route and location of the doctor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <div class="about-single p-3 d-flex justify-content-between">
+                        <div class="about-icon mr-3">
+                            <i class="fa-regular fa-message" aria-hidden="true"></i>
+                        </div>
+                        <div class="about-content">
+                            <h5 class="mb-sm-3 mb-2">Messages</h5>
+                            <p>At a emergemcy situation a chatting is available to talk with doctor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <div class="about-single p-3 d-flex justify-content-between">
+                        <div class="about-icon mr-3">
+                            <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                        </div>
+                        <div class="about-content">
+                            <h5 class="mb-sm-3 mb-2">Gallery</h5>
+                            <p>We will add few of our satisfied customers happy moments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+    <!-- //services -->
+    <!-- what we do section -->
+    <div class="w3l-grids-block-5 py-5">
+        <div class="container pb-md-5 py-4">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8">
+                    <div class="section-heading mb-sm-5 mb-4">
+                        <h3 class="title-style mb-2">What We Do</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-card-single">
+                        <div class="grids5-info">
+                            <a href="#blog"><img src="{% static 'assets/images/img1.jpg' %}" alt="" /></a>
+                            <div class="blog-info">
+                                <h4><a href="#blog">Doctor Consultation</a></h4>
+                                <p>Consult doctor as per your priorities</p>
+                                <a class="btn btn-style" href="about.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                    <div class="blog-card-single">
+                        <div class="grids5-info">
+                            <a href="#blog"><img src="{% static 'assets/images/route.jpg' %}" alt="" /></a>
+                            <div class="blog-info">
+                                <h4><a href="#blog">Fastest Route</a></h4>
+                                <p>Get access to the shortest route</p>
+                                <a class="btn btn-style" href="about.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+                    <div class="blog-card-single">
+                        <div class="grids5-info">
+                            <a href="#blog"><img src="{% static 'assets/images/notification.jpg' %}" alt="" /></a>
+                            <div class="blog-info">
+                                <h4><a href="#blog">Treatment Notification</a></h4>
+                                <p>Get notified for the medicine on time</p>
+                                <a class="btn btn-style" href="about.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //what we do section -->
+    <!-- feature content section -->
+    <section class="w3l-content-4 py-5" id="features">
+        <div class="content-4-main py-md-5 py-4">
+            <div class="container">
+                <div class="content-info-in row">
+                    <div class="content-left col-lg-6">
+                        <h3 class="title-style font-weight-normal mb-2">Your pet is in good hands with us! Let your
+                            favorite get the best care by our Doctors </h3>
+                        <p class="mt-4">The booking system is used to get your data to analyse the patients health condition</p>
+                        <p class="mt-4">The Doctors address and other details are given so you can select as per your priorities</p>
+                        <p class="mt-3">The map is avalilable whenever the doctor starts his jurney. You can view it then you can book the doctor if he accepts he will come for treatements</p>
+                        
+                    </div>
+                    <div class="content-right col-lg-6 pl-lg-4 mt-lg-0 mt-5">
+                        <div class="row content4-right-grids mb-lg-5 mb-4">
+                            <div class="col-2 content4-right-icon">
+                                <div class="content4-icon">
+                                    <span class="fa fa-user-md"></span>
+                                </div>
+                            </div>
+                            <div class="col-10 content4-right-info">
+                                <h6><a href="#url">Certified Doctors</a></h6>
+                                <p>All the doctors will be certified under Bachelor in Veterinary Science or Doctor of Veterinary Medicine</p>
+                            </div>
+                        </div>
+                        <div class="row content4-right-grids mb-lg-5 mb-4">
+                            <div class="col-2 content4-right-icon">
+                                <div class="content4-icon">
+                                    <span class="fa fa-thumbs-up"></span>
+                                </div>
+                            </div>
+                            <div class="col-10 content4-right-info">
+                                <h6><a href="#url">Easy Consultation</a></h6>
+                                <p>Booking a doctor is very easy, Select a doctor and submit your details</details></p>
+                            </div>
+                        </div>
+                        <div class="row content4-right-grids">
+                            <div class="col-2 content4-right-icon">
+                                <div class="content4-icon">
+                                    <span class="fa fa-users"></span>
+                                </div>
+                            </div>
+                            <div class="col-10 content4-right-info">
+                                <h6><a href="#url">Experienced Team</a></h6>
+                                <p>Our team is filled up of pet lovers, so we have done all the required things to your pets </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //feature content section -->
+
+    {% endblock %}

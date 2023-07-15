@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block title %}Doctor{% endblock %}
+{% block body %}
+{% load static %}
+
+
+    <!-- inner banner -->
+    <div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold text-white mb-sm-3 mb-2">Doctors</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Doctors</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- //inner banner -->
+
+    <!--Doctor Details -->
+    <section class="w3l-contact-11 py-5" id="contact">
+        <div class="pro-pic">
+            <img src="{% static 'assets/images/images.png' %}" width="100px" alt="profile">
+        </div>
+        <br>
+        <div class="container">
+        <table class="table container">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th >{{doctor.username}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Phone</td>
+                    <td id="num">{{doctor.phonenumber}}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{doctor.email}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        Address
+                    </td>
+                    <td>
+                        {{doctor.address}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Qualification
+                    </td>
+                    <td>{{doctor.qualification}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        consultation From
+                    </td>
+                    <td>{{doctor.time1}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        Consultation To
+                    </td>
+                    <td>{{doctor.time2}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <p id="demo"></p>
+        {% if user.is_authenticated %}
+        <!-- Book doctor button -->
+        <form action="booking.html">
+            <div class="book text-right">
+                <button type="submit" class="btn btn-style-white btn-style-primary" formaction="{% url 'registration:book' doctor.username user.username %}">Book Now</button>
+                
+            </div>
+        </form>
+        <!-- //Book doctor button -->
+        {% endif %}
+    </section>
+    <!-- //Doctor Details -->
+    
+    <script>
+        
+        var num = document.getElementById("num");
+        str = num.textContent;
+        number = Number(str);
+        //document.getElementById("demo").innerHTML = number;
+        
+    </script>
+
+    {% endblock %}
+
+    
